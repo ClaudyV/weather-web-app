@@ -1,0 +1,14 @@
+/* Table */
+table {
+  width: 100%;
+}
+
+/* Color for the sorted arrow */
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+/* Api class to the right */
+.api {
+  float: right;
+}

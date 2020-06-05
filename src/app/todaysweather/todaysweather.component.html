@@ -1,0 +1,105 @@
+<!-- Header -->
+<div class="container">
+  <mat-toolbar>
+      <span class="fill-remaining-space"></span>
+        <img src="assets/img/weather.png"> Today's Weather Information <img src="assets/img/weather.png">
+      <span class="fill-remaining-space"></span>
+  </mat-toolbar>
+</div>
+<!-- End of Header -->
+
+
+<div class="container">
+  <!-- Search Bar -->
+  <div class="row">
+    <div class="search-div">
+      <mat-form-field class="search-form-field" floatLabel="never">
+        <input matInput [(ngModel)]="searchKey" placeholder="Search by Keywords" autocomplete="off" (keyup)="applyFilter()">
+        <button mat-button matSuffix mat-icon-button aria-label="Clear"*ngIf="!searchKey">
+          <mat-icon>search</mat-icon>
+        </button>
+        <button mat-button matSuffix mat-icon-button aria-label="Clear"*ngIf="searchKey" (click)="onSearchClear()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <div class="api">
+      Check our API here
+      <button mat-raised-button onClick="window.open('http://localhost:4200/api/weather-info')"> Check
+        <mat-icon>open_in_new</mat-icon>
+      </button>
+    </div>
+    </div>
+  </div>
+  <!-- End of Search Bar -->
+
+  <!-- Weather Table -->
+  <div class="row">
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="listData" matSort>
+
+        <ng-container matColumnDef="_id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+          <td mat-cell *matCellDef="let element"> {{element._id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="dataTime">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Time </th>
+          <td mat-cell *matCellDef="let element"> {{element.dataTime | date:'dd LLLL yyyy'}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="measures">
+          <th mat-header-cell *matHeaderCellDef> Measure </th>
+          <td mat-cell *matCellDef="let element"> {{element.measures}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="lon">
+          <th mat-header-cell *matHeaderCellDef> Longitude </th>
+          <td mat-cell *matCellDef="let element"> {{element.lon}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="value">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Degree </th>
+          <td mat-cell *matCellDef="let element"> {{element.value}} &deg;C</td>
+        </ng-container>
+
+        <ng-container matColumnDef="locationName">
+          <th mat-header-cell *matHeaderCellDef> Location </th>
+          <td mat-cell *matCellDef="let element"> {{element.locationName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="geocode">
+          <th mat-header-cell *matHeaderCellDef> Geocode </th>
+          <td mat-cell *matCellDef="let element"> {{element.geocode}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="lat">
+          <th mat-header-cell *matHeaderCellDef> Latitude </th>
+          <td mat-cell *matCellDef="let element"> {{element.lat}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="loading">
+          <mat-footer-cell *matFooterCellDef colspan="5">
+            Loading data...
+          </mat-footer-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="noData">
+          <mat-footer-cell *matFooterCellDef colspan="5">
+            No data.
+          </mat-footer-cell>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':listData!=null}"></mat-footer-row>
+        <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(listData!=null && listData.data.length==0)}"></mat-footer-row>
+
+      </table>
+      <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="paginatorSize" showFirstLastButtons> </mat-paginator>
+    </div>
+  </div>
+  <!-- End of Wheather Table -->
+</div>
+
+
