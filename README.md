@@ -1,4 +1,4 @@
-# WeatherInfo
+# Weather Web App
 
 Weather web app is a MEAN app which uses Mongodb, Express, Angular and Nodejs. It displays the weather from this url : "https://data.taipei/opendata/datalist/apiAccess?scope=resourceAquire&rid=1f1aaba5-616a-4a33-867d-878142cac5c4" as a table with search, filter and sort functionalities.
 
