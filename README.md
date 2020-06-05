@@ -10,10 +10,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Run `cd weather-web-app`
 - Run `npm install` to get all dependencies 
 - Run `cd weather-web-app/server`
+- Create a Mongo Database with the name "Weather" 
+- Create a Mongo Database Collection with the name "info"
 - Run `nodemon index.js` to start nodejs server
 - Open another terminal and go the folder weather-web-app => `cd weather-web-app`
 - Run `npm start` to start Angular Development Server
 - Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 - Navigate to `http://localhost:4200/api/weather-info` to see the REST api
+
 
 
