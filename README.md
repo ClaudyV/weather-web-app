@@ -1,27 +1,19 @@
 # WeatherInfo
 
+Weather web app is a MEAN app which uses Mongodb, Express, Angular and Nodejs. It displays the weather from this url : "https://data.taipei/opendata/datalist/apiAccess?scope=resourceAquire&rid=1f1aaba5-616a-4a33-867d-878142cac5c4" as a table with search, filter and sort functionalities.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Run `git clone https://github.com/ClaudyV/weather-web-app.git`
+- Run `cd weather-web-app`
+- Run `npm install` to get all dependencies 
+- Run `cd weather-web-app/server`
+- Run `nodemon index.js` to start nodejs server
+- Open another terminal and go the folder weather-web-app => `cd weather-web-app`
+- Run `npm start` to start Angular Development Server
+- Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Navigate to `http://localhost:4200/api/weather-info` to see the REST api
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
