@@ -18,5 +18,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 - Navigate to `http://localhost:4200/api/weather-info` to see the REST api
 
+## Demo 
+
+![Weather Web App Demo](src/assets/img/web-app-demo.png)
+
 
 
