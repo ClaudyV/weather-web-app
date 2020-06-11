@@ -39,7 +39,7 @@ request(url, function(error, response, body){
       app.get("/api/weather-info", function(req, res) {
         db.collection(weatherCollection).find({}).toArray(function(err, docs) {
           if (err) {
-            handleError(res, err.message, "Failed to get contacts.");
+            handleError(res, err.message, "Failed to get weather info.");
           } else {
             res.status(200).json(docs);
             console.log(res)
@@ -66,7 +66,7 @@ request(url, function(error, response, body){
         app.get("/api/weather-info", function(req, res) {
           db.collection(weatherCollection).find({}).toArray(function(err, docs) {
             if (err) {
-              handleError(res, err.message, "Failed to get contacts.");
+              handleError(res, err.message, "Failed to get weather info.");
             } else {
               res.status(200).json(docs);
               console.log(res)
