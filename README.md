@@ -6,8 +6,8 @@ Weather web app is a MEAN app which uses Mongodb, Express, Angular and Nodejs. I
 In this project, I did the following steps: 
 
 1- Build a front-end web page with Angular and go to https://data.taipei/ to retrieve "今日氣象資訊" data, and organize and display the data to users by: 
-● Using a Table to display the original data.
-● Adding filter, search, sort features for the Table.
+- Using a Table to display the original data.
+- Adding filter, search, sort features for the Table.
 
 
 2- Build a back-end system with Node.js, Express.js, MongoDB and go to the same link https://data.taipei/ to retrieve "今日氣象資訊" data, and store it in a database. This back-end system also provides a public API interface, so that other parties can read the contents of the database through the API. Update the data in the database every hour. 
